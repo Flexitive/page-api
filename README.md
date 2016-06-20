@@ -1,7 +1,7 @@
 # Flexitive Page API Guide
 
 ## Overview
-The Flexitive Page API is a way to customize pages built in the [Flexitive](https://flexitive.com) platform. The Page API enables creation of custom elements, integrating with 3rd party tracking, and consuming external data feeds.
+The Page API is a way to customize pages built in [Flexitive](https://flexitive.com). The Page API enables creation of custom elements, integrating with 3rd party tracking, and consuming external data feeds.
 
 **This guide is a work-in-progress, expect breaking changes in the coming weeks and months**
 
