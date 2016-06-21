@@ -77,7 +77,7 @@ Populate `element` with HTML you want to display when the element appears.
 `size` is an object with `width` and `height` properties, representing the dimensions of the custom element. This is useful if the element content needs to respond to the element size.
 
 ### `resize` (optional)
-Update the element HTML content whenever the window sizes changes.
+Update the element HTML content whenever the element size changes (e.g. if the browser window is resized).
 
 ### `appear` (optional)
 Do something when the element appears.
