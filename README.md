@@ -3,10 +3,10 @@
 ## Overview
 The Page API is a way to customize the behavior and content of pages built in [Flexitive](https://flexitive.com). The Page API enables:
 
-* Control of page load
-* Creation of custom elements
-* Listening to events emitted by the Page
-* Connecting dynamic elements to external data sources
+* control of page load
+* creation of custom elements
+* listening to Page events
+* connecting dynamic elements to external data sources
 
 **This guide is a work-in-progress, expect breaking changes in the coming weeks and months**
 
