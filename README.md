@@ -13,6 +13,19 @@ The Page API is a way to customize the behavior and content of pages built in [F
 ## Getting Started
 Pages exported from Flexitive automatically includes the Page API. In `index.html` you will find an empty `<script>` block in which to place your code.
 
+```javascript
+<script>
+  /**
+   * Page API version 1
+   * Documentation: https://github.com/Flexitive/page-api
+   */
+
+  /* Insert your code here */
+
+  Page.start();
+</script>
+```
+
 ## Controlling the Page
 
 ### `Page.start()`
@@ -40,14 +53,14 @@ The callback should take a single argument, the event's metadata object. Subsequ
 When exporting a page, Flexitive automatically includes skeleton API code for any custom elements, e.g.:
 
 ```javascript
-Page.customElement('ImpressiveAnimation', {
+Page.customElement('rYprMHj5NiS#ImpressiveAnimation', {
   load: function (callback) {
     // load element assets, callback when done
   },
-  render: function (element, size) {
+  render: function (container, size) {
     // populate element with custom code
   },
-  resize: function (element, size) {
+  resize: function (container, size) {
     // called whenever the element changes size
   },
   appear: function () {
@@ -72,7 +85,7 @@ Load any data (images/videos/json etc) required by the element and call `callbac
 `load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading their assets.
 
 ### `render`
-Populate `element` with HTML you want to display when the element appears.
+Populate `container` with HTML you want to display when the element appears.
 
 `size` is an object with `width` and `height` properties, representing the dimensions of the custom element. This is useful if the element content needs to respond to the element size.
 
