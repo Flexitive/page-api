@@ -33,7 +33,7 @@ Triggers the page load sequence, eventually causing it to render in the browser 
 
 **The page will not render unless `Page.start()` is called**
 
-## Events
+## Events (coming soon)
 Events allow custom code to be executed in response to Page events. Event listeners will receive an object containing metadata about the event. The following events are emitted:
 
 | Event | Description |
