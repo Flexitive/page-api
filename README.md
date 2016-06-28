@@ -54,11 +54,8 @@ When exporting a page, Flexitive automatically includes skeleton API code for an
 
 ```javascript
 Page.customElement('rYprMHj5NiS#ImpressiveAnimation', {
-  load: function (callback) {
-    // load element assets, callback when done
-  },
-  render: function (container, size) {
-    // populate element with custom code
+  load: function (container, size, callback) {
+    // load element assets, populate element, callback when done
   },
   resize: function (container, size) {
     // called whenever the element changes size
@@ -80,14 +77,11 @@ Custom elements always have a unique name which allows them to be referenced in 
 Defining a custom element involves implementing API hooks which are called by the Page Runtime on load and during execution. These API hooks are described below.
 
 ### `load`
-Load any data (images/videos/json etc) required by the element and call `callback` when ready.
-
-`load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading their assets.
-
-### `render`
-Populate `container` with HTML you want to display when the element appears.
+Load any data (images/videos/json etc) required by the element, populate `container` with HTML you want to display when the element appears, and call `callback` when ready.
 
 `size` is an object with `width` and `height` properties, representing the dimensions of the custom element. This is useful if the element content needs to respond to the element size.
+
+`load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading their assets.
 
 ### `resize` (optional)
 Update the element HTML content whenever the element size changes (e.g. if the browser window is resized).
