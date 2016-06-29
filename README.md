@@ -1,4 +1,4 @@
-# Flexitive Page API Guide
+# Flexitive Page API Guide (v1)
 
 ## Overview
 The Page API is a way to customize the behavior and content of pages built in [Flexitive](https://flexitive.com). The Page API enables:
