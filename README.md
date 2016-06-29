@@ -5,7 +5,7 @@ The Page API is a way to customize the behavior and content of pages built in [F
 
 * control of page load
 * creation of custom elements
-* listening to Page events
+* reacting to Page events
 * connecting dynamic elements to external data sources
 
 **This guide is a work-in-progress, expect breaking changes in the coming weeks and months**
@@ -16,8 +16,8 @@ Pages exported from Flexitive automatically includes the Page API. In `index.htm
 ```javascript
 <script>
   /**
-   * Page API version 1
-   * Documentation: https://github.com/Flexitive/page-api
+   * Page API v1
+   * Documentation: https://github.com/Flexitive/page-api/tree/v1
    */
 
   /* Insert your code here */
@@ -48,7 +48,7 @@ The callback should take a single argument, the event's metadata object. Subsequ
 
 * how the element looks
 * how the element changes over time
-* how the element responds to user-initiated events
+* how the element responds to user interaction
 
 When exporting a page, Flexitive automatically includes skeleton API code for any custom elements, e.g.:
 
@@ -79,15 +79,17 @@ Defining a custom element involves implementing API hooks which are called by th
 ### `load` (required)
 Load any data (images/videos/json etc) required by the element, populate `container` with HTML you want to display when the element appears, and call `done` when ready.
 
+This function should preload *all* asset before calling `done`. For example if the element has an image dependency, it should be [preloaded via Javascript](http://blog.teamtreehouse.com/learn-asynchronous-image-loading-javascript). This helps to avoid any loading issues after the page has started.
+
 `size` is an object with `width` and `height` properties, representing the dimensions of the custom element. This is useful if the element content needs to respond to the element size.
 
-`load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading their assets.
+`load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading.
 
 ### `resize` (optional)
 Update the element HTML content whenever the element size changes (e.g. if the browser window is resized).
 
 ### `appear` (optional)
-Do something when the element appears.
+Do something when the element appears. Typically this is where custom animations would be started.
 
 ### `disappear` (optional)
 Do something when the element disappears.
