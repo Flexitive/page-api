@@ -83,17 +83,17 @@ This function should preload *all* asset before calling `done`. For example if t
 
 `load` is called by the Page Runtime early in the page load sequence. The page will not start until all elements have finished loading.
 
-This basic example populates the element with a red `<div>`:
+This example populates the element with a red `<div>`:
 
 ```javascript
 {
   ...
 
   load: function (container, size, done) {
-    var div = document.createElement('div');
-    div.style.backgroundColor = 'red';
-    div.style.width = '100%';
-    div.style.height = '100%';
+    this.div = document.createElement('div');
+    this.div.style.backgroundColor = 'red';
+    this.div.style.width = '100%';
+    this.div.style.height = '100%';
     container.appendChild(div);
     done();
   },
@@ -107,6 +107,22 @@ Update the element HTML content when the element size changes (e.g. if the brows
 
 ### `appear` (optional)
 Do something when the element appears. Typically this is where custom animations would be started.
+
+This example uses [Greensock](https://greensock.com/) to animate the background color of the element when it appears:
+
+```javascript
+{
+  ...
+
+  appear: function () {
+    TweenLite.to(this.div, 1.0, { backgroundColor: "green" });
+  },
+
+  ...
+}
+```
+
+Note that we're referencing a HTMLElement (`this.div`) defined earlier in the `load` function.
 
 ### `disappear` (optional)
 Do something when the element disappears.
