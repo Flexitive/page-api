@@ -31,16 +31,6 @@ Triggers the page load sequence, eventually causing it to render in the browser 
 
 **The page will not render unless `Page.start()` is called**
 
-## Events (coming soon)
-Events allow custom code to be executed in response to Page events. Event listeners will receive an object containing metadata about the event. The following events are emitted:
-
-| Event | Description |
-| --- | --- |
-| click | Emitted whenever the user clicks on the page. Metadata may include a `clickUrl` or `clickName`, which should trigger a redirect to a new URL. It's up to the event listener to decide how this happens. |
-
-### `Page.listen(eventName, callback)`
-The callback should take a single argument, the event's metadata object. Subsequent calls with the same `eventName` will overwrite the previous listener.
-
 ## Custom elements
 *Custom elements* are a special kind of element added to pages in the Flexitive editor. These elements are defined at runtime using the Page API. This includes:
 
@@ -131,3 +121,13 @@ Do something when the element disappears.
 
 ### `stop` (optional)
 Do something when the page has been "stopped" - an example would be if the user initiates a clickthrough. An example response would be to stop any video/audio playing in the element.
+
+## Events (coming soon)
+Events allow custom code to be executed in response to Page events. Event listeners will receive an object containing metadata about the event. The following events are emitted:
+
+| Event | Description |
+| --- | --- |
+| click | Emitted whenever the user clicks on the page. Metadata may include a `clickUrl` or `clickName`, which should trigger a redirect to a new URL. It's up to the event listener to decide how this happens. |
+
+### `Page.listen(eventName, callback)`
+The callback should take a single argument, the event's metadata object. Subsequent calls with the same `eventName` will overwrite the previous listener.
