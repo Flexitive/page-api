@@ -1,4 +1,4 @@
-# Flexitive Page API Guide (v1)
+# Flexitive Page API v1
 
 ## Overview
 The Page API is a way to customize the behavior and content of pages built in [Flexitive](https://flexitive.com). The Page API enables:
@@ -9,12 +9,12 @@ The Page API is a way to customize the behavior and content of pages built in [F
 * connecting dynamic elements to external data sources
 
 ## Getting Started
-Pages exported from Flexitive automatically includes the Page API. In `index.html` you will find an empty `<script>` block in which to place your code.
+Pages exported from Flexitive automatically include the Page API. In `index.html` you will find an empty `<script>` block in which to place your code.
 
 ```javascript
 <script>
   /**
-   * Page API v1
+   * Flexitive Page API v1
    * Documentation: https://github.com/Flexitive/page-api/tree/v1
    */
 
@@ -56,7 +56,7 @@ Page.customElement('rYprMHj5NiS#ImpressiveAnimation', {
     // load element assets, populate element, callback when done
   },
   resize: function (container, size) {
-    // called whenever the element changes size
+    // called when the element changes size
   },
   appear: function () {
     // called when element appears in animation
@@ -81,10 +81,29 @@ This function should preload *all* asset before calling `done`. For example if t
 
 `size` is an object with `width` and `height` properties, representing the dimensions of the custom element. This is useful if the element content needs to respond to the element size.
 
-`load` is called by the Flexitive Runtime early in the page load sequence. The page will not start until all elements have finished loading.
+`load` is called by the Page Runtime early in the page load sequence. The page will not start until all elements have finished loading.
+
+This basic example populates the element with a red `<div>`:
+
+```javascript
+{
+  ...
+
+  load: function (container, size, done) {
+    var div = document.createElement('div');
+    div.style.backgroundColor = 'red';
+    div.style.width = '100%';
+    div.style.height = '100%';
+    container.appendChild(div);
+    done();
+  },
+
+  ...
+}
+```
 
 ### `resize` (optional)
-Update the element HTML content whenever the element size changes (e.g. if the browser window is resized).
+Update the element HTML content when the element size changes (e.g. if the browser window is resized).
 
 ### `appear` (optional)
 Do something when the element appears. Typically this is where custom animations would be started.
