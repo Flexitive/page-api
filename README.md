@@ -8,8 +8,6 @@ The Page API is a way to customize the behavior and content of pages built in [F
 * reacting to Page events
 * connecting dynamic elements to external data sources
 
-**This guide is a work-in-progress, expect breaking changes in the coming weeks and months**
-
 ## Getting Started
 Pages exported from Flexitive automatically includes the Page API. In `index.html` you will find an empty `<script>` block in which to place your code.
 
