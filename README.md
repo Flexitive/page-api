@@ -137,5 +137,5 @@ The callback should take a single argument, the event's metadata object. Subsequ
 
 | Example | Description |
 | --- | --- |
-| Clock [![Clock Example](examples/clock/screenshot.png)](examples/clock/index.html) | Basic example demonstrating how to populate a custom element with a live digital clock. [View the code >](examples/clock/index.html) |
-| Animated Highlight [![Animated Highlight Example](examples/animated-highlight/screenshot.png)](examples/animated-highlight/index.html) | Demonstrates how to import an external library (Greensock), and use it to create an animated highlight effect. [View the code >](examples/animated-highlight/index.html) |
+| Clock [![Clock Example](examples/clock/screenshot.png)](examples/clock/index.html#L43) | Basic example demonstrating how to populate a custom element with a live digital clock. [View the code >](examples/clock/index.html#L43) |
+| Animated Highlight [![Animated Highlight Example](examples/animated-highlight/screenshot.png)](examples/animated-highlight/index.html#L43) | Demonstrates how to import an external library (Greensock), and use it to create an animated highlight effect. [View the code >](examples/animated-highlight/index.html#L43) |
