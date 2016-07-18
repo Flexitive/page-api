@@ -131,3 +131,9 @@ Events allow custom code to be executed in response to Page events. Event listen
 
 ### `Page.listen(eventName, callback)`
 The callback should take a single argument, the event's metadata object. Subsequent calls with the same `eventName` will overwrite the previous listener.
+
+
+## Examples
+
+[![Clock Example](examples/clock/screenshot.png)](examples/clock/index.html)
+[![Animated Highlight Example](examples/animated-highlight/screenshot.png)](examples/animated-highlight/index.html)
